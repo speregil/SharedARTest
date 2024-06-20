@@ -7,8 +7,6 @@ using UnityEngine.EventSystems;
 public class PlaceCharacter : NetworkBehaviour
 {
     [SerializeField] private GameObject placementObject;
-
-    private bool isPlaced = false;
     private Camera mainCam;
 
     public static event Action characterPlaced;
@@ -21,6 +19,9 @@ public class PlaceCharacter : NetworkBehaviour
 
     void Update()
     {
+        if (PlayerDataManager.instance != default &&
+            PlayerDataManager.instance.GetHasPlayerPlaced(NetworkManager.Singleton.LocalClientId)) return;
+
         //if UNITY_EDITOR
         if (Input.GetMouseButtonDown(0))
         {
@@ -82,5 +83,7 @@ public class PlaceCharacter : NetworkBehaviour
         GameObject character = Instantiate(placementObject, positon, rotation);
         NetworkObject characterNetworkObject = character.GetComponent<NetworkObject>();
         characterNetworkObject.SpawnWithOwnership(callerID);
+
+        PlayerDataManager.instance.AddPlacedPlayer(callerID);
     }
 }
