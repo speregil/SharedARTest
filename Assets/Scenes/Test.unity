@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.44402242, g: 0.49316543, b: 0.5722324, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -619,6 +619,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 955725233}
+  - component: {fileID: 955725235}
+  - component: {fileID: 955725234}
   m_Layer: 0
   m_Name: SceneAR
   m_TagString: Untagged
@@ -644,6 +646,39 @@ Transform:
   - {fileID: 225765399}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &955725234
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 955725232}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c5e00303423314ba88f0be8d259dfe62, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _colocalizationType: 999
+  _sharedArRootPrefab: {fileID: 4781414300907772666, guid: addffc4d55be14f14b776b2b504b86d6, type: 3}
+  _arLocationManager: {fileID: 0}
+--- !u!114 &955725235
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 955725232}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 461769a607f21cf438e2c209d2d5c126, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  spaceManager: {fileID: 955725234}
+  targetImage: {fileID: 0}
+  targetImageSize: 0.1
+  startGameButton: {fileID: 1835372949}
+  createRoomButton: {fileID: 2079580893}
+  joinRoomButton: {fileID: 964409963}
 --- !u!1 &963194225
 GameObject:
   m_ObjectHideFlags: 0
